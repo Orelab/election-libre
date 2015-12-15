@@ -1,0 +1,39 @@
+<?php include('header.php'); ?>
+
+<section id="dashboard">
+
+	<table>
+		<thead>
+			<tr>
+				<th>titre</th>
+				<th>début</th>
+				<th>fin</th>
+				<th>candidats</th>
+				<th>électeurs</th>
+				<th>votes</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<?php foreach( $election as $e ): ?>
+			<tr>
+				<th><?= $e->title ?></th>
+				<th><?= $e->start ?></th>
+				<th><?= $e->end ?></th>
+				<th><?= $e->num_candidates ?></th>
+				<th><?= $e->num_electors ?></th>
+				<th><?= $e->num_votes ?></th>
+				<th>&nbsp;</th>
+			</tr>
+			<?php endforeach; ?>
+		</tbody>
+		
+		<tfoot>
+		</tfoot>
+	</table>
+
+</section>
+
+
+<?php include('footer.php'); ?>

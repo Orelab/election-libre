@@ -1,0 +1,24 @@
+
+(function($)
+{
+
+	$.fn.choices = function(opts)
+	{
+		var settings = $.extend({
+			'cname':'choice',
+			'idle_duration':8000
+		},opts);
+		
+		var me = $(this);
+		
+
+		$(this).each(function(e)
+		{
+			coinsole.log( e );
+			$(this).html('<textarea id=""></textarea><button>+</button>');
+		})		
+		
+		return this;
+	}
+
+})(jQuery);

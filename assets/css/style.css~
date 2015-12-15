@@ -1,0 +1,235 @@
+
+	/* generic */
+	
+	h1 {
+		text-align: center;
+	}
+
+	#js-site-root {
+		display: none;
+	}
+	
+	body {
+		background-color: #DCDCDC;
+		background-color: #DCEAFF;
+	}
+	
+	main {
+		background-color: white;
+		font-size: 1.4em;
+	}
+	
+	input, textarea, select {
+		border: 1px #999898 solid;
+		border-radius: 4px;
+		margin: 2px;
+	}
+	
+	input + span {
+		cursor: pointer;
+	}
+
+
+	/* header */
+	
+	header {
+		padding-top: 50px;
+	}
+
+	header nav {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		background-color: #353232;
+		background-color: rgba(53, 50, 50, .96);
+	}
+
+	header a,
+	header a:hover {
+		color: white;
+		text-decoration: none;
+	}
+		
+	header nav a {
+		display: block;
+		float: left;
+		padding: 15px;
+		border-left: 1px #AC8585 solid;
+		min-width: 80px;
+	}
+	
+	header nav a:first-of-type {
+		width: calc(100% - 280px);
+	}
+	
+	header nav a:nth-child(2) {
+		background-color: #474040;
+	}
+	
+	header nav a:nth-child(2):hover {
+		background-color: #5C4F4F;
+	}
+	
+	
+	header .illustration {
+		clear: both;
+		height: 350px;
+		background: url(../img/democracy.jpg) repeat-x 0 0;
+	}
+
+	
+	
+	/* content */	
+	
+	section {
+		min-height: 400px;
+		max-width: 900px;
+		margin: auto;
+		padding:  10px;
+	}
+	
+	fieldset {
+		margin: 40px 0;
+	}
+	
+	fieldset aside {
+		margin: 40px 0;
+		text-align: center;
+	}
+	
+	fieldset aside button {
+		padding: 12px 22px;
+	}
+	
+	label {
+		display: inline-block;
+		min-width: 220px;
+	}
+	
+	
+	/* manage */
+	
+	#manage input[name=title] {
+		width: calc(100% - 230px);	
+	}
+	
+	
+	/* elector */
+	
+	#elector-list-filler {
+		text-align: center;
+	}
+	
+	#elector-list-filler a,
+	#elector-list-filler input {
+		display: inline-block;
+		text-align: center;
+		width: 200px;
+		line-height: 80px;
+		background-color: #eee;
+		border: 2px #ddd solid;
+		margin: 30px 50px;
+	}
+	
+	#elector-list-filler img {
+		max-width: 100px;
+	}
+	
+	#elector-list .invalid input[type=text] {
+		background-color: #FFD3D3;
+	}
+	
+	#elector-list .valid {
+		display: none;
+	}
+	
+	.qo-table,
+	.qo-table input {
+		width: 100%;
+	}
+	
+	
+	/* choice */
+	
+	#choice>div {
+		text-align: center;
+	}
+	
+	#choice>div p {
+		display: inline-block;
+		text-align: left;
+	}
+	
+	#choice>p span {
+		clear: both;	
+	}
+	
+
+
+	/* results */
+	
+	#result table {
+		margin: auto;	
+	}
+	
+	#result th {
+		padding: 0 10px;
+	}
+	
+	#result tr,
+	#result td {
+		text-align: center;
+	}
+	
+	#checkup button {
+		display: block;
+		width: 100%;
+		margin: auto;	
+	}
+	
+	
+	
+	
+	/* footer */
+	
+	footer {
+		padding: 50px;
+		margin-top: 50px;
+		text-align: center;
+	}
+
+	footer nav a:after {
+		content: " - ";
+	}
+	
+	footer a:last-of-type:after {
+		content: "";
+	}
+	
+	footer img {
+		margin: 30px;	
+	}
+	
+	#lang img {
+		max-width: 30px;
+		margin: 0;
+		cursor: pointer;
+	}
+
+
+	/* admin */
+	
+	#dashboard table {
+		width: 100%;
+		font-size: .7em;
+	}
+	
+	#dashboard tr>* {
+		width: 12.5%;
+		text-align: center;
+	}
+	
+	#dashboard td:last-of-type {
+		min-width: 100px;
+	}
+

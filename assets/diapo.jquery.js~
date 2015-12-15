@@ -1,0 +1,55 @@
+
+(function($)
+{
+
+	$.fn.diapo = function(opts)
+	{
+
+		var settings = $.extend({
+			'animation_duration':1000,
+			'idle_duration':8000
+		},opts);
+		
+		var me = $(this);
+		
+		
+		goPrev = function()
+		{
+			$(me).find('fieldset').hide(),
+			$(this).parents('fieldset').prev('fieldset').show('fast','swing');
+		}
+		
+		goNext = function()
+		{
+			$(me).find('fieldset').hide(),
+			$(this).parents('fieldset').next('fieldset').show('fast','swing');
+		}
+
+		
+		//-- add the goPrev button
+		
+		$(this)
+			.find('fieldset .prev')
+			.on('click',goPrev);
+
+		
+		//-- add the goNext button
+		
+		$(this)
+			.find('fieldset .next')
+			.on('click',goNext);
+
+
+		//-- hide all and show the first
+
+		$(this)
+			.children('fieldset')
+			.hide()
+			.first()
+			.show();
+		
+		
+		return this;
+	};
+
+})(jQuery);

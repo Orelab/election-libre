@@ -1,0 +1,21 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
+
+/*
+|--------------------------------------------------------------------------
+| File Uploading
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+$config['upload_path']  = APPPATH . '../files/';
+
+$config['allowed_types'] =  'csv';
+
+$config['overwrite'] = false;
+
+$config['max_size'] = 204800;		//200 MO
+
+
+
+

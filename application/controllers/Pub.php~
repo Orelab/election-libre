@@ -1,0 +1,17 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Pub extends CI_Controller
+{
+
+	function __construct()
+	{
+		parent::__construct();
+		
+		$page = $this->router->fetch_method();
+
+		$this->load->view( 'cms/' . $page );
+		die();
+	}
+
+}

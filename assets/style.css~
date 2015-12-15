@@ -1,0 +1,72 @@
+
+	/* generic */
+
+	.clr {
+		clear: both;
+	}
+
+
+
+	/* header */
+	
+	header {
+		background-color: #353232;
+	}
+
+	header a,
+	header a:hover {
+		color: white;
+		text-decoration: none;
+	}
+		
+	header nav a {
+		display: block;
+		float: left;
+		padding: 15px;
+		border-left: 1px #AC8585 solid;
+		min-width: 80px;
+	}
+	
+	header nav a:first-of-type {
+		width: calc(100% - 280px);
+	}
+	
+	header nav a:nth-child(2) {
+		background-color: #474040;
+	}
+	
+	header nav a:nth-child(2):hover {
+		background-color: #5C4F4F;
+	}
+	
+	
+	
+	/* content */	
+	
+	section {
+		min-height: 400px;
+		max-width: 900px;
+		margin: auto;
+		padding:  10px;
+	}
+	
+	fieldset {
+		margin: 40px 0;
+	}
+	
+	fieldset aside {
+		margin: 40px 0;
+		text-align: center;
+	}
+	
+	label {
+		display: inline-block;
+		min-width: 150px;
+	}
+	
+	footer {
+		padding: 50px;
+		margin-top: 50px;
+		text-align: center;
+		background-color: #DCDCDC;
+	}
