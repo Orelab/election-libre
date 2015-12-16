@@ -1,12 +1,12 @@
 
+var T = function( key )
+{
+	return JSON.parse( $('#translations').html() )['js_'+key];
+}
+
+
 $(document).ready(function()
 {
-
-	var T = function( key )
-	{
-		return JSON.parse( $('#translations').html() )['js_'+key];
-	}
-
 	$('#lang').lang();
 	$('#manage').manage();
 	$('#choices').candidate();

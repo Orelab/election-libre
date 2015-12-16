@@ -33,23 +33,24 @@ $lang["email_confirmation_availability_date"] = "d/m à H:i";
 
 // Creation
 
-$lang["email_creation_intro"] = "<p>Thank you for using Election-libre ! Your elections are now on rails 
-and will start at the date you specified.</p>
+$lang["email_creation_intro"] = "<p>Merci d'avoir fait confiance à Election-libre ! Vos électeur 
+vont pouvoir déposer leurs suffrages dans les délais que vous avez configuré précédemment.</p>
 
 <p>Veuillez noter que durant la période ouverte aux votes, vous ne pourrez pas modifier le cours des 
 élections.</p>
 	
-<p>You can manage your election with the following private access. Please, don't share it !</p>";
+<p>Vous pouvez aussi administrer vos élection avec vos identifiants suivants. Gardez-les en sécurité,
+ne les partagez jamais !</p>";
 
-$lang["email_creation_address"] = "Address";
+$lang["email_creation_address"] = "Adresse";
 
-$lang["email_creation_login"] = "Login";
+$lang["email_creation_login"] = "Identifiant";
 
-$lang["email_creation_password"] = "Password";
+$lang["email_creation_password"] = "Mot de passe";
 
-$lang["email_creation_best_regards"] = "Best regards";
+$lang["email_creation_best_regards"] = "Bien à vous,";
 
-$lang["email_creation_el_team"] = "<i>The <b>Election Libre</b> team</i>";
+$lang["email_creation_el_team"] = "<i>L'équipde <b>Election Libre</b></i>";
 
 
 // Invitation
@@ -67,8 +68,8 @@ $lang["email_invitation_go_vote"] = "aller voter maintenant";
 
 // Re-send invitation
 
-$lang["email_resend_detail"] = "This is a copy of the original message previously sent to you. 
-If you did'nt asked to received this copy, please just ignore it.";
+$lang["email_resend_detail"] = "Ceci est une copie d'un message original qui vous a été précédemment
+envoyé. Si vous n'avez pas demandé à recevoir cette copie, veuillez simplement l'ignorer.";
 
 
 
