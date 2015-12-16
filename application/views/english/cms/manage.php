@@ -3,7 +3,7 @@
 <section id="manage">
 
 	<fieldset id="intro">
-		<legend>Simplifiez-vous le vote</legend>
+		<legend>An elegant weapon for a more civilized age</legend>
 		
 		<p>Que vous soyez organisateur des prochaines élections de votre association,
 		que vous ayez en tête de lancer un référendum dans votre entreprise, ou plus simplement
