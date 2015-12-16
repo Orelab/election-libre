@@ -1,28 +1,15 @@
-<?php
 
-//	using a PHP variable prevent some minor HTML problems with carriage returns
-
-$info = "Une suite de caractères contenant lettres, chiffres, caractères spéciaux, signifiant "
-			. "quelque chose ou non... absolument ce que vous voulez, du moment que vous pouvez " 
-			. "le retenir si vous souhaitez vérifier votre votre plus tard !";
-		
-?>
 	<fieldset id="sign">
-		<legend>Signez</legend>
+		<legend><?=lang('vote_sign')?></legend>
 	
-		<h2>Veuillez lire attentivement la suite</h2>
-	
-		<p>Nous n'enregistrerons jamais votre <b>clé personnelle</b>. En revanche, 
-		nous allons l'utiliser afin de rendre votre bulletin de vote parfaitement anonyme.</p>
-	
-		<p>Par ailleurs, vous pourrez utiliser votre clé personnelle pour vérifier
-		<b>à tout moment</b> la validité de votre vote, y comprs après la cloture des élections.</p>
+		<?=lang('vote_sign_detail')?>
+
 		<br/>
 		
-		<label for="signature">votre clé personnelle</label>
-		<input type="password" name="signature" value="" title="<?= $info ?>"/>
+		<label for="signature"><?=lang('vote_key')?></label>
+		<input type="password" name="signature" value="" title="<?=lang('vote_key_detail')?>"/>
 
 		<aside>
-			<button class="vote/thank">Glisser dans l'urne</button>
+			<button class="vote/thank"><?=lang('vote_do_vote')?></button>
 		</aside>
 	</fieldset>

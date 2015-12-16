@@ -26,4 +26,6 @@ located in the application/config/ folder.
 Requirements
 ************
 
-PHP 5.3
+To run the app, you need a webserver which comply with Code Igniter requirements :
+ - PHP 5.1.6 or newer
+ - A Database server (MySQL (4.1+), MySQLi, MS SQL, Postgres, Oracle, SQLite, ODBC)

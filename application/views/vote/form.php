@@ -17,6 +17,6 @@
 		</div>
 
 		<aside>
-			<button class="vote/sign">Confirmer mon choix</button>
+			<button class="vote/sign"><?=lang('vote_confirm')?></button>
 		</aside>
 	</fieldset>

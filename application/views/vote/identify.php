@@ -3,24 +3,24 @@
 <section id="vote">
 	
 	<fieldset id="identify">
-		<legend>Identifiez-vous</legend>
+		<legend><?=lang('vote_identify')?></legend>
 		
-		<label for="publicid">Identifiant public</label>
+		<label for="publicid"><?=lang('vote_public_id')?></label>
 		<input type="text" name="publicid" value="<?php if( isset($id) ) echo $id ?>" />
 		<br/>
 		
-		<label for="name">Prénom</label>
+		<label for="name"><?=lang('vote_name')?></label>
 		<input type="text" name="name" value="" />
 		<br/>
 		
-		<label for="surname">Nom</label>
+		<label for="surname"><?=lang('vote_surname')?></label>
 		<input type="text" name="surname" value="" />
 
 		<aside>
-			<p><a href="">Je n'ai pas reçu mon mail d'invitation</a></p>
+			<p><a href=""><?=lang('vote_lost_invitation')?></a></p>
 			<br/>
 
-			<button class="vote/form">Suite</button>
+			<button class="vote/form"><?=lang('vote_next')?></button>
 		</aside>
 	</fieldset>
 	

@@ -1,8 +1,7 @@
 	
 	<fieldset id="thanks">	
-		<legend>Merci  de votre participation !</legend>
+		<legend><?=lang('vote_thankyou')?></legend>
 	
-		<p>Votre vote anonyme a bien été pris en compte. Si vous le souhaitez, vous pouvez vérifier
-		le contenu de votre enveloppe a tout moment grâce à votre clé de cryptage personnelle.</p>
+		<?=lang('vote_thankyou_detail')?>
 
 	</fieldset>

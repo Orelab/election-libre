@@ -3,6 +3,14 @@
 
 class Vote extends EL_Controller
 {
+	
+	public function __construct()
+	{
+		parent::__construct();
+
+		$this->lang->load( 'el_vote' );
+	}
+
 
 	public function index()
 	{
