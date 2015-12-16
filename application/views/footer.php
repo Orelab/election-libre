@@ -47,8 +47,35 @@
 		</div>
 		
 	</footer>
+
+
 	
-	<span id="js-site-root"><?php echo site_url() ?></span>
+	<?php
+	
+	$CI =& get_instance();
+	$CI->lang->load( 'el_javascript' );
+	$jslang = $CI->lang->language;
+
+
+	// Filtering translations and keeping only JS values
+
+	foreach( $jslang as $key => $val )
+	{
+		if( substr($key,0,3) != 'js_' )
+		{
+			unset( $jslang[$key] );
+		}
+	}
+	
+	// Appending some usefull values
+	
+	$jslang['js_lang'] = $CI->config->item( 'language' );
+	$jslang['js_root'] = site_url();
+	
+	?>
+	
+	
+	<span id="translations"><?php echo json_encode( $jslang ) ?></span>
 
 </body>
 </html>

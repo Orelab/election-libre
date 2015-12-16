@@ -216,6 +216,10 @@
 		margin: 0;
 		cursor: pointer;
 	}
+	
+	#translations {
+		display: none;
+	}
 
 
 	/* admin */

@@ -1,9 +1,12 @@
 
-
 $(document).ready(function()
 {
-	ROOT = $('#js-site-root').html();
-	
+
+	var T = function( key )
+	{
+		return JSON.parse( $('#translations').html() )['js_'+key];
+	}
+
 	$('#lang').lang();
 	$('#manage').manage();
 	$('#choices').candidate();
@@ -14,10 +17,9 @@ $(document).ready(function()
 	$('body').radio();
 	$('#result').result();
 
-	$.datetimepicker.setLocale( 'fr' );
+	$.datetimepicker.setLocale( T( 'lang' ) );
 	$('input[type=datetime]').datetimepicker({ dayOfWeekStart: 1 });
 
 });
-
 
 

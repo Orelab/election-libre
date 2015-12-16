@@ -25,7 +25,7 @@
 			{
 				if( a[i].value == "" )
 				{
-					alert('Veuillez remplir tous les champs.');
+					alert( T('error_malformed_data') );
 					return false;
 				}
 			}
@@ -92,7 +92,7 @@
 					.not('.new')
 					.serializeArray();
 				
-				$.post( ROOT + 'manage/save', data, function(e)
+				$.post( T('root') + 'manage/save', data, function(e)
 				{
 					alert( e );
 				});

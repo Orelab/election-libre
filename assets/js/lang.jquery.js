@@ -10,7 +10,7 @@
 		{
 			var lang = {lang: $(this).attr('alt') };
 			
-			$.post( ROOT + 'misc/lang', lang, function( e )
+			$.post( T('root') + 'misc/lang', lang, function( e )
 			{
 				if( e == 'ok' )
 				{

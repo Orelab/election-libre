@@ -22,7 +22,7 @@
 			{
 				if( a[i].value == "" )
 				{
-					alert('Veuillez remplir tous les champs.');
+					alert( T('error_empty_field') );
 					return false;
 				}
 			}
@@ -33,7 +33,7 @@
 		{
 			if( formOK() )
 			{
-				var url = ROOT + $(this).attr('class');
+				var url = T('root') + $(this).attr('class');
 				var data = me.find('input').serialize();
 
 				$.post( url, data, function( e )
@@ -47,20 +47,18 @@
 		{
 			e.preventDefault();
 			
-			var mail = prompt( 'Veuillez saisir votre adresse email :' );
+			var mail = prompt( T('enter_email') );
 			
 			if( ! /\S+\@\S+\.\S+/.test(mail) )
 			{
-				alert( 'Merci de saisir une adresse email correcte.' );
+				alert( T('error_invalid_email') );
 				return;
 			}
 
-			$.post( ROOT + 'vote/sendmail/', {email:mail}, function(e)
+			$.post( T('root') + 'vote/sendmail/', {email:mail}, function(e)
 			{
 				if( e == 'ok' )
-					alert( 'Nous vous avons envoyé une nouvelle invitation '
-							+ 'contenant vos identifiants. Veuillez consulter '
-							+ 'votre boite aux lettres électronique.' );
+					alert( T('confirm_renew_invitation') );
 					else
 					alert( e );
 			});

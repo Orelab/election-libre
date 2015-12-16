@@ -23,7 +23,7 @@
 				signature: me.find('#checkup input[name=signature]').val()
 			};
 
-			$.post( ROOT + 'vote/fingerprint', data, function( e )
+			$.post( T('root') + 'vote/fingerprint', data, function( e )
 			{
 				$('#checkup input[name=fingerprint]')
 					.val( e )

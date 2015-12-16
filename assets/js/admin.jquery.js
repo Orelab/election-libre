@@ -9,7 +9,7 @@
 			if( e.statusText == 'OK' )
 				alert( e.responseText );
 				else
-				alert( 'Sorry, an error occured.' );
+				alert( T('error') );
 				
 			if( e.responseText.indexOf('deleted') > -1 )
 			{

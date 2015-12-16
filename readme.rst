@@ -21,3 +21,9 @@ Installation
 
 Create a MySQL database with the script located in the database/ folder, and edit the configuration files
 located in the application/config/ folder. 
+
+************
+Requirements
+************
+
+PHP 5.3

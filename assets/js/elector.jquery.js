@@ -8,10 +8,10 @@
 		var settings = $.extend({
 			obj : {
 				'structure':[
-					{ id:"name",		name:"prénom",	type:"text", 	options:{default:""}	},
-					{ id:"surname",	name:"nom",		type:"text", 	options:{default:""}	},
-					{ id:"email",		name:"email",	type:"text", 	options:{default:""}	},
-					{ id:"valid",		name:"valid",	type:"text", 	options:{default:""}	},
+					{ id:"name",		name:T('name'),		type:"text", 	options:{default:""}	},
+					{ id:"surname",	name:T('surname'),	type:"text", 	options:{default:""}	},
+					{ id:"email",		name:T('email'),		type:"text", 	options:{default:""}	},
+					{ id:"valid",		name:"valid",			type:"text", 	options:{default:""}	},
 				],
 				'data': []
 			}
@@ -43,7 +43,7 @@
 				data.append('PHP_SESSION_UPLOAD_PROGRESS', progressid);
 				
 				var jqXHR = $.ajax({
-					url: ROOT + 'misc/csv2json',
+					url: T('root') + 'misc/csv2json',
 					data: data,
 					cache: false,
 					contentType: false,
