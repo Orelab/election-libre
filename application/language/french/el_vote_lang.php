@@ -30,7 +30,7 @@ $lang["vote_sign_detail"] = "
 		<p>Nous n'enregistrerons jamais votre <b>clé personnelle</b>. En revanche, 
 		nous allons l'utiliser afin de rendre votre bulletin de vote parfaitement anonyme.</p>
 		<p>Par ailleurs, vous pourrez utiliser votre clé personnelle pour vérifier
-		<b>à tout moment</b> la validité de votre vote, y comprs après la cloture des élections.</p>";
+		<b>à tout moment</b> la validité de votre vote, y compris après la cloture des élections.</p>";
 
 $lang["vote_key"] = "votre clé personnelle";
 
