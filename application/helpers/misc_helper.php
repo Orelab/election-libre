@@ -59,7 +59,7 @@ if ( ! function_exists('sendmail') )
 		}
 
 		$CI =& get_instance();
-		$CI->load->library('email');
+		$CI->load->library( 'email' );
 
 		$CI->email->subject( $data['subject'] );
 		$CI->email->message( $data['message'] );

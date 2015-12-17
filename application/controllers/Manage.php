@@ -15,7 +15,7 @@ class Manage extends EL_Controller
 	/*
 	 *
 	 */
-	public function identify()
+	public function index()
 	{
 		$this->load->view( 'manage/identify' );
 	}
@@ -163,11 +163,16 @@ class Manage extends EL_Controller
 		$this->Elector_model->save( $profile['electors'], $fk );
 		
 		
-		//  warn the admin 
+		//  warn the admin
 		
+		$this->lang->load( 'el_mail' );
+
 		$response = sendmail(array(
-			'subject' => 'Your vote is on rails now',
-			'message' => $this->load->view('email/creation', array('data'=>$profile['election']), true),
+			'subject' => 'Congratulations ! Elections are on rails now',
+			'message' => $this->load->view('email/creation', array(
+								'data'=>$profile['election'],
+								'password'=>$password),
+							true),
 			'toName' => $profile['election']['admin_name'] . ' ' . $profile['election']['admin_surname'],
 			'toEmail' => $profile['election']['admin_email']
 		));

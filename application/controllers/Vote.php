@@ -27,6 +27,7 @@ class Vote extends EL_Controller
 		$this->load->model( 'Security_model') ;
 		$this->Security_model->log( 'invitation lost' );
 
+		$this->lang->load( 'el_mail' );
 
 		$email = $this->input->post( 'email', true );
 		
@@ -126,7 +127,7 @@ class Vote extends EL_Controller
 		
 		if( $num_votes > 1 )
 		{
-			die( 'Sorry, your vote as been recorded yet.' );
+			die( lang('vote_once') );
 		}
 
 
@@ -146,6 +147,8 @@ class Vote extends EL_Controller
 
 
 		// Send a confirmation mail to the elector with its fingerprint, for later verification
+
+		$this->lang->load( 'el_mail' );
 
 		$user = $this->Elector_model->get( $data['id'] );
 

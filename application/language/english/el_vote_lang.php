@@ -3,7 +3,7 @@
 
 // Identify
 
-$lang["vote_identify"] = "Identify";
+$lang["vote_identify"] = "Please identify yourself before to continue :";
 
 $lang["vote_public_id"] = "Public ID";
 
@@ -49,6 +49,6 @@ $lang["vote_thankyou_detail"] = "
 		<p>Your anonymous vote has been successfully registered. If you xwant, you can control it whenever you want
 		thanks to your secret personal key you should be the only one to know.</p>";
 
-
+$lang['vote_once'] = "Sorry, you can only vote once.";
 
 

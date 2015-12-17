@@ -10,7 +10,17 @@ Installation
 ************
 
 Create a MySQL database with the script located in the database/ folder, and edit 
-the configuration files located in the application/config/ folder. 
+the configuration files located in the application/config/ folder.
+
+For a proper (and safer) installation, we advise to place the index.php and assets/
+folder in a subfolder (for example web/). This folder will be the root of your web
+hosting. In addition, you'll have to update index.php as following :
+
+	$system_path = '../system';
+	$application_folder = '../application';
+	
+Please, see Code Igniter for more information about that.
+
 
 *******************
 Server Requirements

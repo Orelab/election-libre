@@ -48,3 +48,5 @@ $lang["vote_thankyou"] = "Merci  de votre participation !";
 $lang["vote_thankyou_detail"] = "
 		<p>Votre vote anonyme a bien été pris en compte. Si vous le souhaitez, vous pouvez vérifier
 		le contenu de votre enveloppe a tout moment grâce à votre clé de cryptage personnelle.</p>";
+
+$lang['vote_once'] = "Désolé, vous ne pouvez voter qu'une fois.";

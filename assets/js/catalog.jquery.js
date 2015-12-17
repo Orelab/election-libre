@@ -178,7 +178,7 @@ Cell.register('email', function()
 				
 		delrow = function()
 		{
-			if( confirm(T('confirm_row-delete')) )
+			if( confirm(T('confirm_row_delete')) )
 			{
 				id = $(this).attr('name');
 				$('.ID' + id).remove();
