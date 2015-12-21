@@ -23,7 +23,7 @@ class EL_Loader extends CI_Loader
 	public function view($view, $vars = array(), $return = FALSE)
 	{
 		global $view_folder;
-		
+/*
 		$CI =& get_instance();
 		$lang = $CI->security->sanitize_filename( $CI->config->item('language') );
 
@@ -31,7 +31,7 @@ class EL_Loader extends CI_Loader
 		{
 			$view = $lang.'/'.$view;
 		}
-
+*/
 		return parent::view($view,$vars,$return);
 	}
 	

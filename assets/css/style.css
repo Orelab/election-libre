@@ -29,6 +29,10 @@
 	input + span {
 		cursor: pointer;
 	}
+	
+	table {
+		width: 100%;
+	}
 
 
 	/* header */

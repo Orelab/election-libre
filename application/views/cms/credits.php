@@ -2,17 +2,17 @@
 
 <section id="credits">
 
-	<h3>Crédits :</h3>
+	<h3><?= lang('cms_credits_title') ?></h3>
 
 	<ul>
-		<li><b>Moteur :</b> Code Igniter 3.0</li>
-		<li><b>Développement :</b> Aurélien Chirot</li>
-		<li><b>Bootstrap :</b> </li>
-		<li><b>Normalize :</b> </li>
-		<li><b>Traductions FR :</b> <a href="https://github.com/ferniwob">Ferniwob</a></li>
-		<li><b>Traductions DE :</b> <a href="https://github.com/MetalMatze/codeigniter-german">MetalMatze</a></li>
-		<li><b>Traductions ES :</b> <a href="https://github.com/danielh989/codeigniter_spanish-la">Danielh989</a></li>
-		<li><b>Conception graphique :</b> ...</li>
+		<li><b><?= lang('cms_credits_framework') ?></b> Code Igniter 3.0</li>
+		<li><b><?= lang('cms_credits_developer') ?></b> Aurélien Chirot</li>
+		<li><b><?= lang('cms_credits_translation') ?></b>
+			<a href="https://github.com/ferniwob">Ferniwob</a>, 
+			<a href="https://github.com/MetalMatze/codeigniter-german">MetalMatze</a>, 
+			<a href="https://github.com/danielh989/codeigniter_spanish-la">Danielh989</a>
+		</li>
+		<li><b><?= lang('cms_credits_design') ?></b> Aurélien Chirot</li>
 	</ul>
 	
 </section>

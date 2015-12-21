@@ -4,9 +4,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Cms extends EL_Controller
 {
 	
+	public function __construct()
+	{
+		parent::__construct();
+		
+		$this->lang->load( 'el_cms' );
+	}
+	
+	
+	
 	
 	/*
-	 *	This part works becose a catch-all redirection as benn
+	 *	This part works because a catch-all redirection as benn
 	 *	set in the config/routers.php file.
 	 */
 	function index()
