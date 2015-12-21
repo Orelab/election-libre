@@ -11,9 +11,9 @@ class Elector_model extends CI_Model
 	 *									terminated election will be returned.
 	 *
 	 */
-	public function get( $id=null, $email=null, $active=false )
+	public function get( $id=null, $email=null, $active=false, $fk_election=null )
 	{
-		if( ! isset($id) && ! isset($email) )
+		if( ! isset($id) && ! isset($email) && ! isset($fk_election) )
 		{
 			return false;
 		}
@@ -31,6 +31,11 @@ class Elector_model extends CI_Model
 		if( $active )
 		{
 			$this->db->where('end >', time() );
+		}
+
+		if( $fk_election )
+		{
+			$this->db->where('fk_election', $fk_election );
 		}
 
 		return $this->db

@@ -44,8 +44,15 @@ class Manage extends EL_Controller
 			if( ! $this->session->userdata('admin_email') )
 			{
 				$this->session->sess_destroy();
+				redirect( 'manage/index' );
 				die( 'Wrong identification. Please reload the page.' );
 			}
+		}
+
+		if( $method == 'index' &&  $this->session->userdata('admin_email') )
+		{
+			$this->dashboard();
+			return;
 		}
 
 		 $this->$method();
@@ -73,6 +80,48 @@ class Manage extends EL_Controller
 			'elections' => $elections
 		));
 
+	}
+	
+	
+	
+	public function candidates()
+	{
+		$id = $this->uri->segment(3);
+		
+		$this->load->model( 'Candidate_model' );
+		$candidates = $this->Candidate_model->get( $id );
+		
+		$this->load->view('manage/candidates', array(
+			'candidates' => $candidates
+		));
+	}
+	
+	
+	
+	public function electors()
+	{
+		$id = $this->uri->segment(3);
+		
+		$this->load->model( 'Elector_model' );
+		$electors = $this->Elector_model->get( null, null, false, $id );
+		
+		$this->load->view('manage/electors', array(
+			'electors' => $electors
+		));
+	}
+	
+	
+	
+	public function votes()
+	{
+		$id = $this->uri->segment(3);
+		
+		$this->load->model( 'Vote_model' );
+		$votes = $this->Vote_model->get( $id );
+		
+		$this->load->view('manage/votes', array(
+			'votes' => $votes
+		));
 	}
 
 

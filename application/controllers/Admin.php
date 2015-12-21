@@ -1,6 +1,13 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 
+/*
+ *	Please, remove this file for a production use ! ! !
+ *	There is no security control and anybody can clear 
+ *	the database with this file on your server !
+ *
+ */
+
 class Admin extends EL_Controller
 {
 

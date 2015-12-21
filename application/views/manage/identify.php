@@ -10,7 +10,7 @@
 		<br/>
 		
 		<label for="password"><?=lang('manage_password')?></label>
-		<input type="text" name="password" value="" />
+		<input type="password" name="password" value="" />
 		<br/>
 
 		<aside>

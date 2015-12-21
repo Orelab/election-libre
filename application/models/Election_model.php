@@ -79,11 +79,6 @@ class Election_model extends CI_Model
 
 		foreach( $recordset as $key => $val )
 		{
-			if( ! isset($val['id']) )
-			{
-				print_r($val);
-				die('STOP');
-			}
 			$num_candidates = $this->Candidate_model->count( $val['id'] );
 			$num_electors = $this->Elector_model->count( $val['id'] );
 			$num_votes = $this->Vote_model->count( $val['id'] );

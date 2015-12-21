@@ -22,6 +22,9 @@
 			}
 		}
 		
+		
+		//-- Delete All
+		
 		var clearAll = function()
 		{
 			$.ajax({
@@ -30,6 +33,11 @@
 				complete: done
 			});
 		}
+		$(this).find('.clear').on( 'click', clearAll );
+
+
+
+		//-- delete one election
 
 		var deleteOne = function()
 		{
@@ -42,6 +50,11 @@
 				complete: done
 			});
 		}
+		$(this).find('.delete').on( 'click', deleteOne );
+
+
+
+		//-- send the invitations again
 
 		var sendInvitations = function()
 		{
@@ -54,10 +67,35 @@
 				complete: done
 			});
 		}
-
-		$(this).find('.clear').on( 'click', clearAll );
-		$(this).find('.delete').on( 'click', deleteOne );
 		$(this).find('.send').on( 'click', sendInvitations );
+
+
+
+		//-- administrate the candidates, electors or votes
+
+		var getView = function( e )
+		{
+			e.preventDefault();
+		
+			var uri = $(this).attr('href');
+			
+			$.post( T('root') + uri, null, function(e)
+			{
+				$(e).dialog({
+					title: $(e).attr('title'),
+					minWidth: 500,
+					minHeight: 300,
+					width: $(window).width() * 0.6,
+					height: $(window).height() * 0.8,
+					hide: { effect: "explode", duration: 200 },
+					modal: true,
+					close: function(e, ui){
+						$(this).dialog('destroy').remove();
+					}
+				});
+			});
+		}
+		$(this).find('a[href^="manage"]').on( 'click', getView );
 
 		return this;
 	}

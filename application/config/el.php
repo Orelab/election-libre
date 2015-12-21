@@ -11,7 +11,7 @@
  *	The use of these actions are recorded in the 'security' table. 
  *
  */
-$config['security_tolerance'] = 25;
+$config['security_tolerance'] = 50;
 
 
 

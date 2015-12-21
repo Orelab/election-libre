@@ -100,6 +100,9 @@ class Misc extends EL_Controller
 
 
 		//-- Security
+		//
+		//	This task is restricted to disallow users to fetch the database
+		//	for existing accounts.
 		
 		$this->Security_model->log( 'email validation', 1 );
 

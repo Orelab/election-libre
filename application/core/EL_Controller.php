@@ -16,7 +16,7 @@ class EL_Controller extends CI_Controller
 
 		if( ! $this->Security_model->control() )
 		{
-			die( 'Security problem, please come back later.' );
+			die( 'Security problem, please come back tomorrow.' );
 		}
 
 		

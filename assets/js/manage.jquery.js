@@ -123,8 +123,8 @@
 
 		$(this)
 			.find('fieldset .save')
-		//	.one('click',register);
-			.on('click',register);
+			.one('click',register);
+		//	.on('click',register);
 
 
 

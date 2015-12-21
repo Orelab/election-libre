@@ -1,4 +1,10 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
+$CI =& get_instance();
+
+if( ! $CI->input->is_ajax_request() ):
+
+?>
 	</main>
 
 	<footer>
@@ -78,3 +84,5 @@
 
 </body>
 </html>
+
+<?php endif; ?>
