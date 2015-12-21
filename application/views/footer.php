@@ -49,7 +49,11 @@ if( ! $CI->input->is_ajax_request() ):
 -->
 		</div>
 		
+		<?php if( ENVIRONMENT != 'production' ): ?>
+		
 		<textarea id="console"><?php print_r( $this->session->all_userdata() ); ?></textarea>
+		
+		<?php endif; ?>
 		
 	</footer>
 
