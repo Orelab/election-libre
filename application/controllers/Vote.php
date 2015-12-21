@@ -25,8 +25,11 @@ class Vote extends EL_Controller
 		// Security stuffs
 		
 		$this->load->model( 'Security_model') ;
-		$this->Security_model->log( 'invitation lost' );
+		$this->Security_model->log( 'invitation lost', 3 );
 
+
+		// generate/send email
+		
 		$this->lang->load( 'el_mail' );
 
 		$email = $this->input->post( 'email', true );
@@ -34,9 +37,7 @@ class Vote extends EL_Controller
 		$this->load->model( 'Elector_model' );
 		$electors = $this->Elector_model->get( null, $email );
 
-		// The same elector can be registered on many elections
-
-		foreach( $electors as $e )
+		foreach( $electors as $e )	// The same elector can be registered on many elections
 		{
 			$mail = array(
 				'subject' => $e['title'],
@@ -77,7 +78,7 @@ class Vote extends EL_Controller
 			die( 'Connexion error.' );
 		}
 
-		$this->session->set_userdata( $election[0] );
+		$this->session->set_userdata( 'data', $election[0] );
 
 		$data = $election[0];
 		
@@ -116,7 +117,7 @@ class Vote extends EL_Controller
 	public function thank()
 	{
 		$signature = $this->input->post( 'signature', true );
-		$data = $this->session->all_userdata();
+		$data = $this->session->get_userdata( 'data' );
 
 
 		// check if a previous vote exists
@@ -142,7 +143,7 @@ class Vote extends EL_Controller
 		$this->Vote_model->save(array(
 			'fk_election' => $data['fk_election'],
 			'fingerprint' => $fingerprint,
-			'vote' => $data['vote']
+			'vote' => $this->session->get_userdata( 'vote' )
 		));
 
 

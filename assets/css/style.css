@@ -220,6 +220,12 @@
 	#translations {
 		display: none;
 	}
+	
+	#console {
+		width: 50%;
+		min-width: 300px;
+		min-height: 500px;	
+	}
 
 
 	/* admin */

@@ -33,7 +33,7 @@ $lang["email_confirmation_availability_date"] = "d/m à H:i";
 
 // Creation
 
-$lang["email_creation_intro"] = "<p>Merci d'avoir fait confiance à Election-libre ! Vos électeur 
+$lang["email_creation_intro"] = "<p>Merci d'avoir fait confiance à Election-libre ! Vos électeurs 
 vont pouvoir déposer leurs suffrages dans les délais que vous avez configuré précédemment.</p>
 
 <p>Veuillez noter que durant la période ouverte aux votes, vous ne pourrez pas modifier le cours des 

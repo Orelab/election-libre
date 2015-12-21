@@ -13,7 +13,8 @@
 		<br/>
 
 		<nav>
-			<a href="<?php echo site_url() ?>manage/identify"><?=lang('footer_administration')?></a>
+			<a href="<?php echo site_url() ?>manage"><?=lang('footer_administration')?></a>
+			<a href="<?php echo site_url() ?>misc/logout"><?=lang('footer_logout')?></a>
 			<a href="<?php echo site_url() ?>cms/disclaimer"><?=lang('footer_advertissment')?></a>
 			<a href="<?php echo site_url() ?>cms/credits"><?=lang('footer_credits')?></a>
 		</nav>
@@ -42,9 +43,7 @@
 -->
 		</div>
 		
-		<div id="console">
-			<?php // print_r( $this->session->all_userdata() ); ?>
-		</div>
+		<textarea id="console"><?php print_r( $this->session->all_userdata() ); ?></textarea>
 		
 	</footer>
 

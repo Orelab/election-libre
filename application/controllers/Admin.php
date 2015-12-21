@@ -18,9 +18,7 @@ class Admin extends EL_Controller
 	public function index()
 	{
 		$this->load->view('admin/dashboard', array(
-			'elections' => $this->Election_model->get( null, true ),
-			'candidates' => $this->Candidate_model->count(),
-			'electors' => $this->Elector_model->count()
+			'elections' => $this->Election_model->get( null, null, true )
 		));
 	}
 	

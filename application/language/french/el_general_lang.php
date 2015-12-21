@@ -8,6 +8,8 @@ $lang['header_vote'] = 'Votez';
 
 $lang['footer_administration'] = 'Administration';
 
+$lang['footer_logout'] = 'Déconnexion';
+
 $lang['footer_advertissment'] = 'Avertissement';
 
 $lang['footer_credits'] = 'Crédits';
