@@ -4,7 +4,7 @@
 class Security_model extends CI_Model
 {
 	    
-	public function log( $action )
+	public function log( $action, $weight=1 )
 	{
 		return $this->db->insert( 'security', array(
 			'IP'				=> $this->input->ip_address(),
@@ -12,11 +12,15 @@ class Security_model extends CI_Model
 			'session_id'	=> session_id(),
 			'session'		=> json_encode( $this->session->all_userdata() ),
 			'url'				=> $this->uri->uri_string(),
-			'action'			=> $action
+			'action'			=> $action,
+			'weight'			=> $weight
 		));
 	}
 	
 	
+	/*
+	 *	Return true if no problem
+	 */
 	public function control()
 	{
 		if( ! session_id() )
@@ -24,15 +28,30 @@ class Security_model extends CI_Model
 			return false;
 		}
 
-		$this->db->from( 'security' );
+		$row = $this->db
+			->select( 'SUM(weight) AS sum' )
+			->from( 'security' )
+			->where(array(
+				'IP'				=> $this->input->ip_address(),
+				'user_agent'	=> $this->input->user_agent(),
+				'session_id'	=> session_id(),
+				'timestamp >'	=> date('Y-m-d H:i:s', time()-(60*60*24) )	// logs from the last 24 hours only
+			))
+			->group_by( 'weight' )
+			->get()
+			->row();
 
-		$this->db->where(array(
-			'IP'				=> $this->input->ip_address(),
-			'user_agent'	=> $this->input->user_agent(),
-			'session_id'	=> session_id()
-		));
+		if( ! $row )
+		{
+			return true; // empty query : no problem
+		}
 
-		return ( $this->db->count_all_results() < $this->config->item('security_tolerance') );
+		if( ! isset($row->sum) )
+		{
+			return false; // query error
+		}
+		
+		return ( $row->sum < $this->config->item('security_tolerance') );
 	}
 	
 

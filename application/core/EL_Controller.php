@@ -19,6 +19,37 @@ class EL_Controller extends CI_Controller
 			die( 'Security problem, please come back later.' );
 		}
 
+		
+		
+		// Session validation
+
+		if( $this->session->has_userdata('ip') )
+		{
+			if( $this->session->userdata('ip') != $this->input->ip_address() )
+			{
+				print_r( $this->session->userdata('ip') );
+				echo $this->input->ip_address();
+				$this->panic( 'IP mismatch' );
+			}
+		}
+		else
+		{
+			$this->session->set_userdata( 'ip', $this->input->ip_address() );
+		}
+
+		
+		if( $this->session->has_userdata('ua') )
+		{
+			if( $this->session->userdata('ua') != $this->input->user_agent() )
+			{
+				$this->panic( 'User agent mismatch' );
+			}
+		}
+		else
+		{
+			$this->session->set_userdata( 'ua', $this->input->user_agent() );
+		}
+
 
 		// Language
 		
@@ -30,6 +61,21 @@ class EL_Controller extends CI_Controller
 		}
 
 		$this->lang->load( 'el_general' );
+	}
+
+
+
+	
+	private function panic( $msg=null )
+	{
+		if( $msg )
+		{
+	//		die( $msg );
+		}
+		
+		$this->session->sess_destroy();
+		redirect( base_url() );
+		die();
 	}
 	
 

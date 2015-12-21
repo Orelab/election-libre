@@ -13,6 +13,13 @@ class Misc extends EL_Controller
 	}
 
 
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		redirect( base_url() );
+		die();
+	}
+
 
 	/*
 	 *	This controller is used to convert a spreadsheet file to json array,
@@ -24,6 +31,13 @@ class Misc extends EL_Controller
 	 */
 	public function csv2json()
 	{
+		//-- Security
+		
+		$this->Security_model->log( 'csv to json', 1 );
+
+
+		//-- Conversion
+
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('upload');
 		
@@ -75,8 +89,41 @@ class Misc extends EL_Controller
 			$d[] = filter_var( $d[2], FILTER_VALIDATE_EMAIL ) ? true : false;
 		}
 		
-		echo json_encode( $data );
+		echo json_encode( $data );	
+	}
+	
+	
+	
+	public function email_validation()
+	{
+		$email = $this->input->post( 'email', true );
+
+
+		//-- Security
 		
+		$this->Security_model->log( 'email validation', 1 );
+
+
+		//-- check the email format
+		
+		if( ! filter_var( $email, FILTER_VALIDATE_EMAIL ) )
+		{
+			die( 'Invalid email' );
+		}
+
+
+		//-- check if email is ever registered
+		
+		$this->load->model( 'Election_model' );
+		$elections = $this->Election_model->get( null, $email, true );
+		
+		if( count($elections)>=1 )
+		{
+			die( 'Unavailable email' );
+		}
+		
+		die( 'ok' );
+
 	}
 
 

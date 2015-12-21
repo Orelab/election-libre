@@ -11,7 +11,7 @@
 		
 		var me = $(this);
 				
-
+		
 
 		var formOK = function()
 		{
@@ -78,6 +78,28 @@
 		$(this)
 			.find('fieldset .next')
 			.on('click',goNext);
+
+
+
+		//-- check if email is valid
+
+		var checkEmailValidity = function()
+		{
+			var data = {email:$(this).val()};
+			
+			$.post( T('root') + 'misc/email_validation', data, function(e)
+			{
+				if( e != 'ok' )
+				{
+					alert( e );
+				}
+			});
+		}
+		
+		$(this)
+			.find( 'input[name=admin_email]' )
+			.on( 'change', checkEmailValidity )
+			.on( 'click', function(){console.log('click')} );
 
 
 		

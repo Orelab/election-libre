@@ -8,36 +8,84 @@ class Manage extends EL_Controller
 	{
 		parent::__construct();
 
+		$this->load->model( 'Election_model' );
+
+
+		// Registering the user
+		
+		$email = $this->input->post( 'email' );
+		$password = $this->input->post( 'password' );
+
+		if( $email && $password )
+		{
+			$elections = $this->Election_model->exists( $email, $password, true );
+	
+			if( gettype($elections)=='array' && count($elections)>0 )
+			{
+				$this->session->set_userdata( 'admin_email', $elections[0]['admin_email'] );
+			}
+		}
+
+		//	Language stuffs
+		
 		$this->lang->load( 'el_manage' );
+	}
+	
+
+
+	//	Using the _remap function() to control rights management :
+	//
+	//	https://ellislab.com/codeigniter/user-guide/general/controllers.html#remapping
+		
+	public function _remap( $method )
+	{
+		if( ! in_array( $method, array('index','save') ) )
+		{
+			if( ! $this->session->userdata('admin_email') )
+			{
+				$this->session->sess_destroy();
+				die( 'Wrong identification. Please reload the page.' );
+			}
+		}
+
+		 $this->$method();
 	}
 
 
-	/*
-	 *
-	 */
+
+
 	public function index()
 	{
 		$this->load->view( 'manage/identify' );
 	}
 	
 	
+	
+	
 	public function dashboard()
 	{
-		die( 'Coming soon.' );
+		$email = $this->session->userdata( 'admin_email' );
+		
+		$this->load->model( 'Election_model' );
+		$elections = $this->Election_model->get( null, $email, true );
+
+		$this->load->view('manage/dashboard', array(
+			'elections' => $elections
+		));
+
 	}
 
 
 	
 
 
-	/*
-	 *	This part saves a new election, with its candidate and electors list.
-	 */
+	//	This part saves a new election, with its candidate and electors list.
+
 	public function save()
 	{
 		// Security stuffs
 		
-		$this->Security_model->log( 'election creation' );
+		$this->Security_model->log( 'election creation', 3 );
 
 
 		// None of these fields must be empty. If it occurs, there is an IHM problem and the procedure
