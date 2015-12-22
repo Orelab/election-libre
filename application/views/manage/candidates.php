@@ -15,13 +15,22 @@
 		<tbody>
 			<?php foreach( $candidates as $c ): $c=(object)$c; ?>
 			<tr>
-				<td><?= $c->value ?></td>
+				<td><input type="text" name="candidate-<?= $c->id ?>" value="<?= $c->value ?>" /></td>
 				<td>
-				<!--	<button class="send <?=$c->id ?>">invit</button>	-->
+					<button class="save-<?=$c->id ?>">Save</button>
 				</td>
 			</tr>
 			<?php endforeach; ?>
 		</tbody>
+		
+		<tfoot>
+			<tr>
+				<td><input type="text" name="candidate-new" value="" /></td>
+				<td>
+					<button class="new">New</button>
+				</td>
+			</tr>
+		</tfoot>
 	</table>
 
 	<?php else : ?>

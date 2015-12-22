@@ -11,8 +11,6 @@
 		
 		var radioClick = function()
 		{
-			console.log('click');
-
 			var prev = $(this).prev();
 			
 			if( prev.is('input')  )

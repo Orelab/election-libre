@@ -49,9 +49,17 @@ if( ! $CI->input->is_ajax_request() ):
 		
 		<?php if( ENVIRONMENT != 'production' ): ?>
 		
-		<textarea id="console"><?php print_r( $this->session->all_userdata() ); ?></textarea>
+		<textarea id="console"><?php 
+
+			print_r( $this->session->all_userdata() ); 
+
+			echo "\ntoken name : " . $this->security->get_csrf_token_name();
+			echo "\ncsrf hash : " . $CI->security->get_csrf_hash();
+
+		?></textarea>
 		
 		<?php endif; ?>
+		
 		
 	</footer>
 
@@ -78,7 +86,12 @@ if( ! $CI->input->is_ajax_request() ):
 	
 	$jslang['js_lang'] = $CI->config->item( 'language' );
 	$jslang['js_root'] = site_url();
+
+
+	// Appending CSRF protection 
 	
+	$jslang['js_csrf_name'] = $this->security->get_csrf_token_name();
+	$jslang['js_csrf_hash'] = $CI->security->get_csrf_hash();
 	?>
 	
 	

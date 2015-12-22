@@ -2,6 +2,8 @@
 
 <section id="dashboard">
 
+	<h1>&nbsp;</h1>
+
 	<?php if( count($elections) ): ?>
 	
 	<table>
