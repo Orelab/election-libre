@@ -48,7 +48,12 @@
 			e.preventDefault();
 			
 			var mail = prompt( T('enter_email') );
-			
+
+			if( typeof mail === 'object' )	// is null ?
+			{
+				return;
+			}
+
 			if( ! /\S+\@\S+\.\S+/.test(mail) )
 			{
 				alert( T('error_invalid_email') );
