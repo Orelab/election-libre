@@ -178,6 +178,11 @@ class Manage extends EL_Controller
 					die( 'Date error.' );
 			}
 			
+			elseif( $key == 'page' )
+			{
+				$profile['election']['page'] = $value;	// the same as below, without strip_tags()
+			}
+			
 			elseif( in_array($key, $keys) )
 			{
 				$profile['election'][$key] = strip_tags( $value );

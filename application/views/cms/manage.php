@@ -48,7 +48,7 @@
 		<br/>
 				
 		<label for="page"><?= lang('cms_manage_msg'); ?></label>
-		<textarea name="page" class="richtext new"></textarea>
+		<textarea name="page" id="richtext" class="new"></textarea>
 		<br/>
 		<br/>
 				

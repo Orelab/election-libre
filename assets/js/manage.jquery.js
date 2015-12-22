@@ -35,10 +35,10 @@
 		
 		var richText = function()
 		{
-			if( me.find('fieldset:visible .richtext').length )
+			if( me.find('fieldset:visible #richtext').length )
 			{
 				tinymce.init({
-					selector: '.richtext',
+					selector: '#richtext',
 					theme: 'modern',
 					language: 'fr_FR',
 					menubar: false,
@@ -113,6 +113,11 @@
 					.find('input,textarea,select')
 					.not('.new')
 					.serializeArray();
+
+				data.push({
+					name: 'page',
+					value: tinymce.activeEditor.getContent()
+				});
 				
 				$.post( T('root') + 'manage/save', data, function(e)
 				{
