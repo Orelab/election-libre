@@ -62,7 +62,7 @@ if ( ! function_exists('sendmail') )
 		$CI->load->library( 'email' );
 
 		$CI->email->subject( $data['subject'] );
-		$CI->email->message( $data['message'] );
+		$CI->email->message( htmlspecialchars($data['message']) );
 		
 		if( isset($data['fromEmail']) )
 			$reply_to = $data['fromEmail'];
