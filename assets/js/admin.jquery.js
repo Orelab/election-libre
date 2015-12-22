@@ -81,18 +81,7 @@
 			
 			$.post( T('root') + uri, null, function(e)
 			{
-				$(e).dialog({
-					title: $(e).attr('title'),
-					minWidth: 500,
-					minHeight: 300,
-					width: $(window).width() * 0.6,
-					height: $(window).height() * 0.8,
-					hide: { effect: "explode", duration: 200 },
-					modal: true,
-					close: function(e, ui){
-						$(this).dialog('destroy').remove();
-					}
-				});
+				$(e).cdialog();
 			});
 		}
 		$(this).find('a[href^="manage"]').on( 'click', getView );

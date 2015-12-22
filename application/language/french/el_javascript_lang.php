@@ -22,3 +22,5 @@ $lang['js_enter_email'] = 'Veuillez saisir votre adresse email :';
 $lang['js_confirm_renew_invitation'] = 'Nous vous avons envoyé une nouvelle invitation '
 													. 'contenant vos identifiants. Veuillez consulter '
 													. 'votre boite aux lettres électronique.';
+
+$lang['js_close'] = 'Fermer';

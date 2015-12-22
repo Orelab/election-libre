@@ -116,7 +116,16 @@
 				
 				$.post( T('root') + 'manage/save', data, function(e)
 				{
-					alert( e );
+					var c = T('js_close');
+					
+					$(e).cdialog({
+						buttons:[
+							{
+								text: T('js_close'),
+								click: function(){ window.location.href = T('root'); }
+							}
+						]
+					});
 				});
 			}
 		}

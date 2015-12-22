@@ -43,10 +43,8 @@ if( ! $CI->input->is_ajax_request() ):
 		<div id="lang">
 			<img src="<?php echo site_url() ?>assets/img/flag_GB.gif" alt="English" />
 			<img src="<?php echo site_url() ?>assets/img/flag_FR.gif" alt="French" />
-<!-- soon :
 			<img src="<?php echo site_url() ?>assets/img/flag_DE.gif" alt="German" />
 			<img src="<?php echo site_url() ?>assets/img/flag_ES.gif" alt="Spanish" />
--->
 		</div>
 		
 		<?php if( ENVIRONMENT != 'production' ): ?>

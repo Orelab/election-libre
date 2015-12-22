@@ -307,7 +307,7 @@ class Manage extends EL_Controller
 			}
 		}
 		
-		die('Thank you.');
+		die( lang('manage_success') );
 	}
 	
 
