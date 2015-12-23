@@ -1,5 +1,9 @@
 <?php defined("BASEPATH") OR exit("No direct script access allowed");
 
+// Sendmail
+
+$lang["vote_check_mailbox"] = "Please, check your mailbox.";
+
 
 // Identify
 

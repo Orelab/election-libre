@@ -197,6 +197,10 @@
 		margin: auto;	
 	}
 	
+	#winner p,
+	#votelist p {
+		text-align: center;
+	}
 	
 	
 	

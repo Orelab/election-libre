@@ -23,3 +23,5 @@ $lang['js_confirm_renew_invitation'] = 'You should have received a new invitatio
 													. 'with your IDs. Please visit your mailbox now.';
 
 $lang['js_close'] = 'Close';
+
+$lang["js_error"] = "An error occured";

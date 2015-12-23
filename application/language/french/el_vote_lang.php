@@ -1,5 +1,9 @@
 <?php defined("BASEPATH") OR exit("No direct script access allowed");
 
+// Sendmail
+
+$lang["vote_check_mailbox"] = "Votre invitation vous a bien été renvoyée par email.";
+
 
 // Identify
 
@@ -50,3 +54,38 @@ $lang["vote_thankyou_detail"] = "
 		le contenu de votre enveloppe a tout moment grâce à votre clé de cryptage personnelle.</p>";
 
 $lang['vote_once'] = "Désolé, vous ne pouvez voter qu'une fois.";
+
+
+// Result
+
+
+$lang["vote_result"] = "Résultats";
+
+$lang["vote_candidate"] = "Candidat";
+
+$lang["vote_ballot"] = "Suffrage";
+
+$lang["vote_result_unavailable"] = "Résultats non disponibles.";
+
+$lang["vote_ballot_list"] = "Bulletins de vote";
+
+$lang["vote_fingerprint"] = "Emprunte";
+
+$lang["vote_count"] = "Décompte";
+
+$lang["vote_no_vote"] = "Aucun vote enregistré pour le moment.";
+
+$lang["vote_check"] = "Vérification de votre bulletin";
+
+$lang["vote_check_detail"] = "Veillez à bien respecter l'emploi des accents, traits d'unions, majuscules et autres subtilités de votre clavier dans chacun des champs.";
+
+$lang["vote_signature"] = "Signature";
+
+$lang["vote_fingerprint_calculation"] = "calculer votre empreinte";
+
+
+
+
+
+
+

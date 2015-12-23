@@ -52,12 +52,12 @@ class Misc extends EL_Controller
 		
 		if( $fileinfo['file_type']!='text/plain' )
 		{
-			die_error( 'bad file type.' );		
+			die_error( 'file_type' );		
 		}
 		
 		if( $fileinfo['file_ext']!='.csv' )
 		{
-			die_error( 'bad file extension.' );		
+			die_error( 'file_extension' );
 		}
 		
 		$data = array_map( "str_getcsv", file( $fileinfo['full_path'] ) );
@@ -66,7 +66,7 @@ class Misc extends EL_Controller
 
 		if( ! is_array($data) )
 		{
-			die_error( 'corrupted data.' );
+			die_error( 'corrupted_data' );
 		}
 
 		if( count($data)<1 )
@@ -76,7 +76,7 @@ class Misc extends EL_Controller
 		
 		if( count($data[0])<3 )
 		{
-			die_error( 'titles are missing.' );
+			die_error( 'missing_titles' );
 		}
 		
 		if( implode( $data[0] ) == "prenomnomadresse email" )
@@ -111,7 +111,7 @@ class Misc extends EL_Controller
 		
 		if( ! filter_var( $email, FILTER_VALIDATE_EMAIL ) )
 		{
-			die( 'Invalid email' );
+			die( lang('error_invalid_email') );
 		}
 
 
@@ -122,11 +122,10 @@ class Misc extends EL_Controller
 		
 		if( count($elections)>=1 )
 		{
-			die( 'Unavailable email' );
+			die( lang('error_unavailable_email') );
 		}
 		
 		die( 'ok' );
-
 	}
 
 

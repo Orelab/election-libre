@@ -22,20 +22,25 @@ if ( ! function_exists('random_key') )
 
 if ( ! function_exists('die_error') )
 {
-	function die_error( $title, $detail=null )
+	function die_error( $key )
 	{
-		$time = date( "d-m-y h:i:s" );
+		$CI =& get_instance();
+		$CI->lang->load( 'el_error' );
+		
+		$title = lang( 'error_' . $key . '_title' );
+		$detail = lang( 'error_' . $key . '_detail' );
+
 		
 		// saving the error to the DB
 
+		$time = date( "d-m-y h:i:s" );
 		
 
 		//	printing the error
 		
-		$CI =& get_instance();
 		$html = $CI->load->view( 'errors/generic', array(
-			'title' => $title,
-			'detail' => $detail
+			'title' => $title ? $title : $key,
+			'detail' => $detail ? $detail : ''
 		), true);
 		
 		die( $html );

@@ -56,10 +56,10 @@ class Vote extends EL_Controller
 			
 			if( ! sendmail($mail) )
 			{
-				die_error( 'Mailer problem.' );
+				die_error( 'mailer_problem' );
 			}
 		}
-		die( 'Please, check your mailbox.' );
+		die( lang('vote_check_mailbox') );
 	}
 	
 
@@ -172,7 +172,7 @@ class Vote extends EL_Controller
 		
 		if( ! sendmail($mail) )
 		{
-			die_error( 'Mailer problem.' );
+			die_error( 'mailer_problem' );
 		}
 
 		$this->session->sess_destroy();
@@ -196,11 +196,11 @@ class Vote extends EL_Controller
 		if( count($election) == 1 )
 			$election = $election[0];
 			else
-			die_error( 'Bad election identifier.' );
+			die_error( 'bad_identifier' );
 
 		if( time() < strtotime($election['end']) )
 		{
-			die_error( 'Please come back later' );		
+			die_error( 'too_early' );		
 		}
 
 

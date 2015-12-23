@@ -4,6 +4,9 @@
 class Manage extends EL_Controller
 {
 	
+	public $public_method = array('index','save');
+	
+	
 	public function __construct()
 	{
 		parent::__construct();
@@ -39,7 +42,7 @@ class Manage extends EL_Controller
 		
 	public function _remap( $method )
 	{
-		if( ! in_array( $method, array('index','save') ) )
+		if( ! in_array($method, $this->public_method) )
 		{
 			if( ! $this->session->userdata('admin_email') )
 			{
