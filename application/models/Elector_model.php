@@ -54,9 +54,9 @@ class Elector_model extends CI_Model
 		
 		return $this->db
 			->select(array(
-						'elector.id', 'name', 'surname', 'public_id', 
-						'fk_election', 'business', 'winners', 'title', 
-						'page', 'start', 'end', 'voted'
+						'elector.id', 'name', 'surname', 'email', 
+						'public_id', 'fk_election', 'business', 'winners', 
+						'title', 'page', 'start', 'end', 'voted'
 					))
 			->from('elector')
 			->where( array(

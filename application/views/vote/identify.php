@@ -6,7 +6,7 @@
 		<legend><?=lang('vote_identify')?></legend>
 		
 		<label for="publicid"><?=lang('vote_public_id')?></label>
-		<input type="text" name="publicid" value="<?php if( isset($id) ) echo $id ?>" />
+		<input type="text" name="publicid" value="<?php if( isset($public_id) ) echo $public_id ?>" />
 		<br/>
 		
 		<label for="name"><?=lang('vote_name')?></label>

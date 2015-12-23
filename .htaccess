@@ -1,4 +1,12 @@
 RewriteEngine On
+
+#AuthUserFile /var/www/election-libre.com/.htpasswd
+#AuthName "restricted"
+#AuthType Basic
+#<Files "admin">
+#  require valid-user
+#</Files>
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php?/$1 [L] 

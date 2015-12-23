@@ -84,7 +84,7 @@
 				$(e).cdialog();
 			});
 		}
-		$(this).find('a[href^="manage"]').on( 'click', getView );
+		$(this).delegate( 'a[href^="manage"]', 'click', getView );
 
 		return this;
 	}

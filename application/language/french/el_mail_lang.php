@@ -20,7 +20,7 @@ $lang["email_confirmation_identifier"] = "votre identifiant";
 
 $lang["email_confirmation_signature"] = "votre signature";
 
-$lang["email_confirmation_signature_value"] = "votre signature";
+$lang["email_confirmation_signature_value"] = "[vous seul la connaissez]";
 
 $lang["email_confirmation_fingerprint"] = "l'empreinte de votre bulletin";
 
@@ -50,7 +50,7 @@ $lang["email_creation_password"] = "Mot de passe";
 
 $lang["email_creation_best_regards"] = "Bien à vous,";
 
-$lang["email_creation_el_team"] = "<i>L'équipde <b>Election Libre</b></i>";
+$lang["email_creation_el_team"] = "<i>L'équip d'<b>Election Libre</b></i>";
 
 
 // Invitation

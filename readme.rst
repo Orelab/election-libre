@@ -34,6 +34,9 @@ If you want to use it in a secure way, you should probably want to hide the cons
 located in the footer. In that way, you'll have to add a variable in Apache2 :
 
 	SetEnv CI_ENV production
+	
+You should also remove the file **application/controller/Admin.php** as it is
+barelly useful.
 
 *******************
 Server Requirements

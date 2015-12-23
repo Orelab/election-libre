@@ -3,7 +3,17 @@
 
 class Security_model extends CI_Model
 {
-	    
+	  
+	/*
+	 *	This method is used to control user abuse. In case of excessive call
+	 *	to some sensible pages, the user risk to be banned until he waits 
+	 *	enougth time to be considered as a non spammer.
+	 *
+	 *	Technically, the call of this method will generate a row in the security
+	 *	log table. In a second time, a call to $this->control() will tell if the
+	 *	user is considered as a spamer or not (be bellow for more explanation). 
+	 *
+	 */
 	public function log( $action, $weight=1 )
 	{
 		return $this->db->insert( 'security', array(
@@ -19,7 +29,14 @@ class Security_model extends CI_Model
 	
 	
 	/*
-	 *	Return true if no problem
+	 *	This method should be called each time a controller method is called.
+	 *	In fact it is used only in core/El_Controller.php 's constructor, which
+	 *	mean it is called every time.
+	 *
+	 *	The method compare the user parameter in the config file config/el.php.
+	 *	If the sum of all recorded sensitive actions is higher than the authorized
+	 *	amount in the configuration, the user will be rejected.
+	 *
 	 */
 	public function control()
 	{
@@ -35,7 +52,7 @@ class Security_model extends CI_Model
 				'IP'				=> $this->input->ip_address(),
 				'user_agent'	=> $this->input->user_agent(),
 				'session_id'	=> session_id(),
-				'timestamp >'	=> date('Y-m-d H:i:s', time()-(60*60*24) )	// logs from the last 24 hours only
+				'timestamp >'	=> date('Y-m-d H:i:s', time()  - $this->config->item('security_tolerance') )	// logs from the last 24 hours only
 			))
 			->group_by( 'weight' )
 			->get()

@@ -14,9 +14,9 @@ class Vote extends EL_Controller
 
 	public function index()
 	{
-		$id = $this->security->xss_clean( $this->uri->segment(3) );
+		$public_id = $this->security->xss_clean( $this->uri->segment(3) );
 
-		$this->load->view( 'vote/identify', array('id'=>$id) );
+		$this->load->view( 'vote/identify', array('public_id'=>$public_id) );
 	}
 	
 	
@@ -71,16 +71,16 @@ class Vote extends EL_Controller
 		
 		$this->load->model( 'Elector_model' );
 
-		$election = $this->Elector_model->exists( $public_id, $name, $surname );
+		$elector = $this->Elector_model->exists( $public_id, $name, $surname );
 	
-		if( count($election) != 1 )
+		if( count($elector) != 1 )
 		{
 			die( 'Connexion error.' );
 		}
 
-		$this->session->set_userdata( 'data', $election[0] );
+		$this->session->set_userdata( 'data', $elector[0] );
 
-		$data = $election[0];
+		$data = $elector[0];
 		
 		if( $data['voted'] == 1 )
 		{
@@ -117,7 +117,7 @@ class Vote extends EL_Controller
 	public function thank()
 	{
 		$signature = $this->input->post( 'signature', true );
-		$data = $this->session->get_userdata( 'data' );
+		$data = $this->session->userdata( 'data' );
 
 
 		// check if a previous vote exists
@@ -134,7 +134,7 @@ class Vote extends EL_Controller
 
 		// sign and save the vote
 		//	The signature is used as a salt in the calculation of the fingerprint
-		// Signature is not recorded whereas fingerprint is.
+		// Fingerprint is saved, but not signature.
 
 		$fingerprint = md5( trim(strtolower($data['name'])) . trim(strtolower($data['surname'])) . $signature );
 

@@ -159,7 +159,7 @@ class Manage extends EL_Controller
 		
 
 		// No need to specify 'true' in the second argument as it is also configured in the config file,
-		// but as it is a very important verification, it's better to impose it here...
+		// but as it is a very important verification, it's better to force it here...
 
 		$data = $this->input->post(null, true);
 		$keys = array_keys( $profile['election'] );

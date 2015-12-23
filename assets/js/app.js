@@ -14,10 +14,18 @@ var T = function( key )
 
 $.ajaxPrefilter(function(options, originalOptions, jqXHR)
 {
-	if( options.data )
+	if( options.data instanceof FormData )
+	{
+		options.data.append( T('csrf_name'), T('csrf_hash') );
+	}
+	else if( options.data )
+	{
 		options.data += '&' + T('csrf_name') + '=' + T('csrf_hash');
-		else
+	}
+	else
+	{
 		options.data = T('csrf_name') + '=' + T('csrf_hash');
+	}
 });
 
 

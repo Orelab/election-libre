@@ -83,13 +83,13 @@ class Misc extends EL_Controller
 		{
 			array_shift( $data );
 		}
-		
+
 		foreach( $data as &$d )
 		{
 			$d[] = filter_var( $d[2], FILTER_VALIDATE_EMAIL ) ? true : false;
 		}
 		
-		echo json_encode( $data );	
+		die( json_encode($data) );	
 	}
 	
 	
