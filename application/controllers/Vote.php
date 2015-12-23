@@ -196,11 +196,11 @@ class Vote extends EL_Controller
 		if( count($election) == 1 )
 			$election = $election[0];
 			else
-			die( 'Bad election identifier.' );
+			die_error( 'Bad election identifier.' );
 
 		if( time() < strtotime($election['end']) )
 		{
-			die( 'Please come back later' );		
+			die_error( 'Please come back later' );		
 		}
 
 

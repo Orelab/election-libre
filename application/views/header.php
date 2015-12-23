@@ -27,6 +27,7 @@ if( ! $CI->input->is_ajax_request() ):
 <!--	<script src="<?php echo site_url() ?>assets/js/datepicker-fr.js"></script>	-->
 	<script src="<?php echo site_url() ?>assets/js/cdialog.jquery.js"></script>
 	<script src="<?php echo site_url() ?>assets/js/lang.jquery.js"></script>
+	<script src="<?php echo site_url() ?>assets/js/error.jquery.js"></script>
 	<script src="<?php echo site_url() ?>assets/js/radio.jquery.js"></script>
 	<script src="<?php echo site_url() ?>assets/js/manage.jquery.js"></script>
 	<script src="<?php echo site_url() ?>assets/js/vote.jquery.js"></script>

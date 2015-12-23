@@ -14,7 +14,6 @@ if ( ! function_exists('random_key') )
 		{
 			$key .= substr( $allowed_characters, rand(0,$len), 1 );
 		}
-		
 		return $key;
 	}
 }	
@@ -23,14 +22,23 @@ if ( ! function_exists('random_key') )
 
 if ( ! function_exists('die_error') )
 {
-	function die_error( $error )
+	function die_error( $title, $detail=null )
 	{
-		$title = "Election Libre error";
 		$time = date( "d-m-y h:i:s" );
 		
-		// ...
+		// saving the error to the DB
+
 		
-		die( $error );
+
+		//	printing the error
+		
+		$CI =& get_instance();
+		$html = $CI->load->view( 'errors/generic', array(
+			'title' => $title,
+			'detail' => $detail
+		), true);
+		
+		die( $html );
 	}
 }
 

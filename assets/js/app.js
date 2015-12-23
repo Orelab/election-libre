@@ -36,6 +36,8 @@ $(document).ready(function()
 
 	$('#manage').manage();
 
+	$('#error').error();
+
 	$('#choices').candidate();
 
 	$('#electors').elector();
